@@ -7,23 +7,21 @@ import java.util.Map;
 
 public class TelDirectory {
 
-    Map<String, String> telDirMap = new HashMap<>();
+    Map<String, String> telDirMap = new HashMap<>();// it should be private
 
-
-    public void add(String number, String name){
+    public void add(String number, String name) {
         telDirMap.put(number, name);
     }
 
-    public List<String> get(String name){
+    public List<String> get(String name) {
         List<String> listOfSameName = new ArrayList();
         String resualtOfserch = "";
-        for(Map.Entry<String,String> entry : telDirMap.entrySet()){
-            if(entry.getValue().equals(name)){
+        for (Map.Entry<String, String> entry : telDirMap.entrySet()) {
+            if (entry.getValue().equals(name)) {
                 resualtOfserch = name + " " + entry.getKey();
                 listOfSameName.add(resualtOfserch);
             }
         }
         return listOfSameName;
     }
-
 }
